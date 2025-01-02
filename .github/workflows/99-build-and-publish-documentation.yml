@@ -1,0 +1,20 @@
+name: 99. 📖 Build and publish documentation
+on:
+  push:
+jobs:
+  build-mkdocs:
+    name: 📖 Build and publish documentation
+    runs-on: ubuntu-22.04
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 👷 Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - name: 📖 Build and publish documentation
+        run: |
+          pip install mkdocs
+          mkdocs gh-deploy --force
