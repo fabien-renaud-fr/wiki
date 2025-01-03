@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.fabienrenaud.fr/mkdocs/initialize-a-new-wiki/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Initialize a new wiki - frd/wiki</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Initialize a new wiki";
+        var mkdocs_page_input_path = "mkdocs/initialize-a-new-wiki.md";
+        var mkdocs_page_url = "/mkdocs/initialize-a-new-wiki/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> frd/wiki
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Welcome</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Git</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../git/useful-commands/">Useful commands</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mkdocs</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Overview</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Initialize a new wiki</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#optional-install-mkdocs">(Optional) Install MkDocs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#initialize-github-repository">Initialize GitHub repository</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#configure-cicd">Configure CI/CD</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#configure-custom-domain">Configure custom domain</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#references">References</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">frd/wiki</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Mkdocs</li>
+      <li class="breadcrumb-item active">Initialize a new wiki</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="initialize-a-new-wiki">Initialize a new wiki</h1>
+<p>This page provides a step-by-step guide to set up a new MkDocs-based wiki. It explains how to configure your project,
+set up CI/CD pipelines with GitHub Actions to build website, and assign a custom domain name for your documentation
+site.</p>
+<h2 id="optional-install-mkdocs">(Optional) Install MkDocs</h2>
+<p>You can skip this part if you only want to build website using CI/CD and never run website on your own computer.</p>
+<p><strong>Using Python:</strong></p>
+<p>Follow official instructions here: <a href="https://www.mkdocs.org/user-guide/installation">MkDocs Installation</a></p>
+<p><strong>Using Docker:</strong></p>
+<p>You can build your own unofficial Docker image:
+<a href="https://github.com/fabien-renaud-fr/wiki/tree/master/docker/mkdocs">https://github.com/fabien-renaud-fr/wiki/tree/master/docker/mkdocs</a></p>
+<h2 id="initialize-github-repository">Initialize GitHub repository</h2>
+<ul>
+<li>Create a new GitHub repository</li>
+<li>Create <code>mkdocs.yml</code> configuration file (can be locally generated by running <code>mkdocs new &lt;site&gt;</code> command):</li>
+</ul>
+<pre><code class="language-yaml">site_name: My Docs
+</code></pre>
+<ul>
+<li>Create <code>docs/index.md</code> file (also generated by running <code>mkdocs new &lt;site&gt;</code> command):</li>
+</ul>
+<pre><code class="language-markdown"># Welcome to MkDocs
+
+For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+
+## Commands
+
+* `mkdocs new [dir-name]` - Create a new project.
+* `mkdocs serve` - Start the live-reloading docs server.
+* `mkdocs build` - Build the documentation site.
+* `mkdocs -h` - Print help message and exit.
+
+## Project layout
+
+    mkdocs.yml    # The configuration file.
+    docs/
+        index.md  # The documentation homepage.
+        ...       # Other markdown pages, images and other files.
+</code></pre>
+<h2 id="configure-cicd">Configure CI/CD</h2>
+<p>To automatically publish your website, follow this procedure:</p>
+<ul>
+<li>Create <code>.github/workflows/99-build-and-publish-documentation.yml</code> file:</li>
+</ul>
+<pre><code class="language-yaml">name: 99. 📖 Build and publish documentation
+on:
+  push:
+jobs:
+  build-mkdocs:
+    name: 📖 Build and publish documentation
+    runs-on: ubuntu-22.04
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 👷 Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - name: 📖 Build and publish documentation
+        run: |
+          pip install mkdocs
+          mkdocs gh-deploy --force
+</code></pre>
+<ul>
+<li>Go to your repository's <code>Settings</code> / <code>Pages</code> / <code>Build and deployment</code> page:<ul>
+<li>source <code>Deploy from a branch</code></li>
+<li>branch: <code>gh-pages</code> <code>/ (root)</code> <em>(this branch will be created once
+  <code>.github/workflows/99-build-and-publish-documentation.yml</code> file is pushed)</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="configure-custom-domain">Configure custom domain</h2>
+<p>To setup a custom domain on a MkDocs website published on GitHub pages, follow this procedure:</p>
+<ol>
+<li>Go to your DNS provider and create a new record:<ul>
+<li>type: <code>CNAME</code></li>
+<li>subdomain: <code>wiki.fabienrenaud.fr</code></li>
+<li>target: <code>fabien-renaud-fr.github.io</code> <em>(the CNAME record should always point to &lt;user&gt;.github.io or
+  &lt;organization&gt;.github.io, excluding the repository name)</em></li>
+</ul>
+</li>
+<li>Create a <code>docs/CNAME</code> file that contains the subdomain on a single line</li>
+<li>Go to your repository's <code>Settings</code> / <code>Pages</code> / <code>Custom Domain</code> page, configure your subdomain and click on <code>Save</code></li>
+</ol>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="../">Wiki / MkDocs / Overview</a></li>
+<li><a href="https://www.mkdocs.org/user-guide/installation">(External) MkDocs / MkDocs Installation</a></li>
+<li><a href="https://www.mkdocs.org/user-guide/deploying-your-docs/#custom-domains">(External) MkDocs / Deploying your docs / Custom Domains</a></li>
+<li><a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages">(External) GitHub / About custom domains and GitHub Pages</a></li>
+<li><a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain">(External) GitHub / Manage a custom subdomain / Configuring a subdomain</a></li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../" class="btn btn-neutral float-left" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
