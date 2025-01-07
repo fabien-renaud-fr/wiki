@@ -6,6 +6,10 @@
 
 ```bash
 docker build -t mkdocs:latest docker/mkdocs
+
+# If you want to use material theme
+# https://github.com/squidfunk/mkdocs-material
+docker build -t mkdocs:latest --build-arg additional_libraries=mkdocs-material docker/mkdocs
 ```
 
 ### Run command

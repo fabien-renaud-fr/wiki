@@ -16,5 +16,5 @@ jobs:
 
       - name: 📖 Build and publish documentation
         run: |
-          pip install mkdocs
+          pip install mkdocs mkdocs-material
           mkdocs gh-deploy --force
