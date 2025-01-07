@@ -1,5 +1,7 @@
 site_name: frd/wiki
 site_url: https://wiki.fabienrenaud.fr
+markdown_extensions:
+  - sane_lists
 theme:
   name: material
   palette:
