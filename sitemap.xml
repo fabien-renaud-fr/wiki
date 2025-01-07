@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://wiki.fabienrenaud.fr/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://wiki.fabienrenaud.fr/aws/cicd/github/create-iam-role-for-github-oidc-provider/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://wiki.fabienrenaud.fr/aws/cicd/github/setup-github-oidc-customization-template/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://wiki.fabienrenaud.fr/git/useful-commands/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://wiki.fabienrenaud.fr/mkdocs/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://wiki.fabienrenaud.fr/mkdocs/initialize-a-new-wiki/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+</urlset>
